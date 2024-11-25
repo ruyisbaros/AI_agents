@@ -20,7 +20,8 @@ openai = OpenAI()
 
 
 class AgentBase(ABC):
-    def __init__(self, name: str, max_retries: int = 2, verbose: bool = True):  # name is agent name
+    # name: Agent name. e.g. write article, summarize document etc...
+    def __init__(self, name: str, max_retries: int = 2, verbose: bool = True):
         self.name = name
         self.max_retries = max_retries
         self.verbose = verbose
