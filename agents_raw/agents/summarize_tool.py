@@ -8,8 +8,8 @@ class SummarizeTool(AgentBase):
     def execute(self, text):
         messages = [
             {"role": "system",
-                "content": "you are an AI assistant that summarizes medical texts"},
-            {"role": "user", "content": f"Please provide a concise summary of the following text: \n\n {text}\
+                "content": "you are an AI assistant that summarizes the medical texts"},
+            {"role": "user", "content": f"Please provide a concise summary of the following text: \n\n {text}
                 \n\n Summary:"}
         ]
 

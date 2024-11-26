@@ -9,7 +9,7 @@ class WriteArticleTool(AgentBase):
         messages = [
             {"role": "system",
                 "content": "You are an expert academy researcher and a writer."},
-            {"role": "user", "content": f"Please write an article on following: \n\n {topic}\
+            {"role": "user", "content": f"Please write an article on following: \n\n {topic}
                 \n\n Article:"}
         ]
 
