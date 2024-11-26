@@ -1,4 +1,4 @@
-from agents_base import AgentBase
+from .agents_base import AgentBase
 
 
 class SanitazeTool(AgentBase):
@@ -9,8 +9,8 @@ class SanitazeTool(AgentBase):
         messages = [
             {"role": "system",
                 "content": "you are an AI assistant that sanitazes the medical data by removing Protected Health Information (PHI)"},
-            {"role": "user", "content": f"Please remove all PHI from following data: \n\n {medical_data}
-                \n\n Sanitazed Data:"}
+            {"role": "user", "content": (f"Please remove all PHI from following data: \n\n {medical_data} \
+                \n\n Sanitazed Data:")}
         ]
 
         sanitazed_data = self.call_openai(messages)

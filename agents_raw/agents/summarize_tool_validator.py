@@ -1,4 +1,4 @@
-from agents_base import AgentBase
+from .agents_base import AgentBase
 
 
 class SummarizeToolValidator(AgentBase):
@@ -11,10 +11,10 @@ class SummarizeToolValidator(AgentBase):
             {"role": "system",
                 "content": "You are an expert academic researcher who validates the summarized medical texts."
              },
-            {"role": "user", "content": f"Given the original text and summarized text. Please verify wheter the summary accurately capture the key 
-                points of original text.\n 
-             Provide a brief analysis and rate the summarization on a scale of 1 to 5 accordingly. 5 indicates exxellent 
-                   and 1 indicates worst quality. \n\n Original text: {original_text}\n\n Summarized text:\n {summarized_text}
+            {"role": "user", "content": f"Given the original text and summarized text. Please verify wheter the summary accurately capture the key \
+                points of original text.\n \
+             Provide a brief analysis and rate the summarization on a scale of 1 to 5 accordingly. 5 indicates exxellent  \
+                   and 1 indicates worst quality. \n\n Original text: {original_text}\n\n Summarized text:\n {summarized_text} \
                 \n\n Validation:"}
         ]
 

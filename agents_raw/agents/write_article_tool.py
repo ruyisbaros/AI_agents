@@ -1,15 +1,15 @@
-from agents_base import AgentBase
+from .agents_base import AgentBase
 
 
 class WriteArticleTool(AgentBase):
     def __init__(self, max_retries, verbose=True):
         super().__init__(name="WriteArticleTool", verbose=verbose, max_retries=max_retries)
 
-    def execute(self, topic):
+    def execute(self, topic, outline=None):
         messages = [
             {"role": "system",
                 "content": "You are an expert academy researcher and a writer."},
-            {"role": "user", "content": f"Please write an article on following: \n\n {topic}
+            {"role": "user", "content": f"Please write an article on following: \n\n {topic} \
                 \n\n Article:"}
         ]
 

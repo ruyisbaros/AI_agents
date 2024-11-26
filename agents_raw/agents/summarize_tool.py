@@ -1,4 +1,4 @@
-from agents_base import AgentBase
+from .agents_base import AgentBase
 
 
 class SummarizeTool(AgentBase):
@@ -9,7 +9,7 @@ class SummarizeTool(AgentBase):
         messages = [
             {"role": "system",
                 "content": "you are an AI assistant that summarizes the medical texts"},
-            {"role": "user", "content": f"Please provide a concise summary of the following text: \n\n {text}
+            {"role": "user", "content": f"Please provide a concise summary of the following text: \n\n {text} \
                 \n\n Summary:"}
         ]
 

@@ -1,4 +1,4 @@
-from agents_base import AgentBase
+from .agents_base import AgentBase
 
 
 class RefinerAgent(AgentBase):
@@ -15,8 +15,8 @@ class RefinerAgent(AgentBase):
                             "text": "You are an academic researcher and editor that refines medical articles by improving the quality and clarity."
                         }
                     ]},
-            {"role": "user", "content": f"Please refine the following article draft to improve its language, coherence and overall quality : \n\n {draft}
-                \n\n Refined Article:"}
+            {"role": "user", "content": (f"Please refine the following article draft to improve its language, coherence and overall quality : \n\n {draft}\
+                \n\n Refined Article:")}
         ]
 
         refined_article = self.call_openai(

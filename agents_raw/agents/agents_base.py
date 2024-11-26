@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 # from IPython.display import Markdown, display, update_display
 from abc import ABC, abstractmethod
 from openai import OpenAI
-from loguru import Logger
+from loguru import logger
 
 
 load_dotenv("../.env")
@@ -35,9 +35,9 @@ class AgentBase(ABC):
         while retries < self.max_retries:
             try:
                 if self.verbose:
-                    Logger.info(f"[{self.name}] sending message to AI server")
+                    logger.info(f"[{self.name}] sending message to AI server")
                     for msg in messages:
-                        Logger.debug(f"{msg["role"]}: {msg["content"]}")
+                        logger.debug(f"{msg["role"]}: {msg["content"]}")
                 completion = openai.chat.completions.create(
                     model=MODEL,
                     messages=messages,
@@ -46,12 +46,12 @@ class AgentBase(ABC):
                 )
                 result = completion.choices[0].message
                 if self.verbose:
-                    Logger.info(
+                    logger.info(
                         f"[{self.model}] received response from AI server: {result}")
 
                 return result
             except Exception as e:
                 retries += 1
                 if self.verbose:
-                    Logger.error(f"{self.name} Failed to call OpenAI: {e}")
+                    logger.error(f"{self.name} Failed to call OpenAI: {e}")
                 raise Exception(f"{self.name} Failed")

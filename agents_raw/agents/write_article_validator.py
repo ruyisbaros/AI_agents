@@ -1,4 +1,4 @@
-from agents_base import AgentBase
+from .agents_base import AgentBase
 
 
 class WriteArticleValidator(AgentBase):
@@ -11,9 +11,9 @@ class WriteArticleValidator(AgentBase):
             {"role": "system",
                 "content": "You are an expert academic researcher who validates the research articles."
              },
-            {"role": "user", "content": f"Please assess the following article whether it comprehensively covers the topic, follows logical 
-               structure and maintains academic standarts.\n Provide a brief analysis and rate the article on a scale of 1 to 5 accordingly. 5 indicates exxellent 
-                   and 1 indicates worst quality. \n\nArticle:\n {article}\n\n Topic: {topic}
+            {"role": "user", "content": f"Please assess the following article whether it comprehensively covers the topic, follows logical \
+               structure and maintains academic standarts.\n Provide a brief analysis and rate the article on a scale of 1 to 5 accordingly. 5 indicates exxellent \
+                   and 1 indicates worst quality. \n\nArticle:\n {article}\n\n Topic: {topic} \
                 \n\n Validation:"}
         ]
 
